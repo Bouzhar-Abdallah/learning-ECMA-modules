@@ -10,7 +10,7 @@ export class TodoManager {
   addTodo(todoName) {
     this.todoList.push(new Todo(this.todoList.length, todoName));
   }
-
+ 
   removeTodo(id) {
     this.todoList = this.todoList.filter((todo) => todo.id !== id);
   }

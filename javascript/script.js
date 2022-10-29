@@ -42,4 +42,20 @@ const updateTodoView = () => {
           </div>
         </li>`;
   });
+
+  todoHandler.todoList.forEach((e) => {
+    document
+      .getElementById(`button_done_${e.id}`)
+      .addEventListener("click", () => {
+        todoHandler.updateTodo(e.id);
+        document.getElementById(e.id).classList.toggle("done");
+      });
+
+    document
+      .getElementById(`button_delete_${e.id}`)
+      .addEventListener("click", () => {
+        todoHandler.removeTodo(e.id);
+        updateTodoView();
+      });
+  });
 };
